@@ -2,10 +2,11 @@
 
 #include <QOpenGLContext>
 
-OpenGLWindow::OpenGLWindow(QWindow *parent)
+OpenGLWindow::OpenGLWindow(QWindow *parent, int width, int height)
     : QWindow(parent)
 {
     setSurfaceType(QWindow::OpenGLSurface);
+    resize(width, height);
 }
 
 OpenGLWindow::~OpenGLWindow()
@@ -17,7 +18,6 @@ void OpenGLWindow::initialize()
     QSurfaceFormat format;
     format.setSamples(16);
     setFormat(format);
-    resize(640, 480);
 }
 
 void OpenGLWindow::render()
