@@ -14,6 +14,10 @@ OpenGLWindow::~OpenGLWindow()
 
 void OpenGLWindow::initialize()
 {
+    QSurfaceFormat format;
+    format.setSamples(16);
+    setFormat(format);
+    resize(640, 480);
 }
 
 void OpenGLWindow::render()
