@@ -3,7 +3,7 @@ import QtQuick.Window 2.15
 
 Window {
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+    width: 800
+    height: 600
+    title: qsTr("QTGL")
 }
