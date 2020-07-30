@@ -2,6 +2,8 @@
 
 #include <QOpenGLContext>
 
+#include <iostream>
+
 OpenGLWindow::OpenGLWindow(QWindow *parent, int width, int height)
     : QWindow(parent)
 {
@@ -53,7 +55,6 @@ void OpenGLWindow::renderNow()
 {
     if (!isExposed())
         return;
-
     bool needsInitialize = false;
 
     if (!m_context) {
@@ -72,6 +73,6 @@ void OpenGLWindow::renderNow()
     }
 
     render();
-
     m_context->swapBuffers(this);
+    requestUpdate();
 }
